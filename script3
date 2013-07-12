@@ -1,5 +1,5 @@
 #!/bin/bash
-#totally cool coloring
+#totally cool coloring-
 for i in ./names.txt 
 	do 
 		touch $i.txt
