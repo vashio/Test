@@ -1,7 +1,23 @@
 #!/bin/bash
 #totally cool coloring-
-for i in ./names.txt 
-	do 
-		touch $i.txt
-		echo "Hello $i I would like to inform you about an upcoming event." > $i.txt 
-	done
+
+#for i in $(./names.txt)
+#	do
+#		touch $i.txt
+#		echo "Hello $i I would like to inform you about an upcoming event." > $i.txt 
+#	done
+
+i=0
+while read line
+do
+	touch "$line".dat
+	i=$((i+1))
+	echo "$i"
+done < ./names.txt
+
+rm script4
+touch script4
+chmod 755 script4
+echo "mkdir ./temp" > script4
+echo "mv *.dat ./temp" >> script4
+./script4
